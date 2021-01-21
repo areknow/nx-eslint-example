@@ -26,7 +26,24 @@
         "enforceBuildableLibDependency": true,
         "allow": [],
         "depConstraints": [
-          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] },
+          {
+            "sourceTag": "target:angular",
+            "onlyDependOnLibsWithTags": ["target:angular", "target:workspace"]
+          },
+          {
+            "sourceTag": "type:util",
+            "onlyDependOnLibsWithTags": ["type:util"]
+          },
+          {
+            "sourceTag": "type:feature",
+            "onlyDependOnLibsWithTags": [
+              "type:feature",
+              "type:ui",
+              "type:util",
+              "type:data-access"
+            ]
+          }
         ]
       }
     ]

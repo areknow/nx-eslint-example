@@ -24,17 +24,25 @@
   },
   "projects": {
     "example-app": {
-      "tags": []
-    },
-    "example-app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["example-app"]
+      "tags": ["target:angular"]
     },
     "api": {
-      "tags": []
+      "tags": ["target:backend"]
     },
     "api-interfaces": {
-      "tags": []
+      "tags": ["target:workspace", "type:util"]
+    },
+    "a-react-lib": {
+      "tags": ["target:react"]
+    },
+    "a-angular-lib": {
+      "tags": ["target:angular"]
+    },
+    "a-angular-feature-lib": {
+      "tags": ["target:angular", "type:feature"]
+    },
+    "a-angular-util-lib": {
+      "tags": ["target:angular", "type:util"]
     }
   }
 }

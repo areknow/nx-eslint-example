@@ -16,9 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@spine-z/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@spine-z/a-react-lib": ["libs/a-react-lib/src/index.ts"],
-      "@spine-z/a-angular-lib": ["libs/a-angular-lib/src/index.ts"],
       "@spine-z/a-angular-feature-lib": [
         "libs/a-angular-feature-lib/src/index.ts"
       ],

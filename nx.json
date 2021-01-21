@@ -23,20 +23,26 @@
     }
   },
   "projects": {
-    "api-interfaces": {
-      "tags": ["target:workspace", "type:util"]
-    },
     "a-react-lib": {
       "tags": ["target:react"]
-    },
-    "a-angular-lib": {
-      "tags": ["target:angular"]
     },
     "a-angular-feature-lib": {
       "tags": ["target:angular", "type:feature"]
     },
     "a-angular-util-lib": {
       "tags": ["target:angular", "type:util"]
+    },
+    "angular-nest-app-ui": {
+      "tags": []
+    },
+    "angular-nest-app-backend": {
+      "tags": []
+    },
+    "next-nest-app-backend": {
+      "tags": []
+    },
+    "next-nest-app-ui": {
+      "tags": []
     }
   }
 }

@@ -1,27 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "api-interfaces": {
-      "root": "libs/api-interfaces",
-      "sourceRoot": "libs/api-interfaces/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api-interfaces/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "a-react-lib": {
       "root": "libs/a-react-lib",
       "sourceRoot": "libs/a-react-lib/src",
@@ -41,28 +20,6 @@
           }
         }
       }
-    },
-    "a-angular-lib": {
-      "projectType": "library",
-      "root": "libs/a-angular-lib",
-      "sourceRoot": "libs/a-angular-lib/src",
-      "prefix": "spine-z",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/a-angular-lib/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/a-angular-lib/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {}
     },
     "a-angular-feature-lib": {
       "projectType": "library",
@@ -107,6 +64,242 @@
         }
       },
       "schematics": {}
+    },
+    "angular-nest-app-ui": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/angular-nest-app/ui",
+      "sourceRoot": "apps/angular-nest-app/ui/src",
+      "prefix": "spine-z",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/angular-nest-app/ui",
+            "index": "apps/angular-nest-app/ui/src/index.html",
+            "main": "apps/angular-nest-app/ui/src/main.ts",
+            "polyfills": "apps/angular-nest-app/ui/src/polyfills.ts",
+            "tsConfig": "apps/angular-nest-app/ui/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/angular-nest-app/ui/src/favicon.ico",
+              "apps/angular-nest-app/ui/src/assets"
+            ],
+            "styles": ["apps/angular-nest-app/ui/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-nest-app/ui/src/environments/environment.ts",
+                  "with": "apps/angular-nest-app/ui/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-nest-app-ui:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-nest-app-ui:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-nest-app-ui:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/angular-nest-app/ui/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/angular-nest-app/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-nest-app-backend": {
+      "root": "apps/angular-nest-app/backend",
+      "sourceRoot": "apps/angular-nest-app/backend/src",
+      "projectType": "application",
+      "prefix": "angular-nest-app-backend",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/angular-nest-app/backend",
+            "main": "apps/angular-nest-app/backend/src/main.ts",
+            "tsConfig": "apps/angular-nest-app/backend/tsconfig.app.json",
+            "assets": ["apps/angular-nest-app/backend/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-nest-app/backend/src/environments/environment.ts",
+                  "with": "apps/angular-nest-app/backend/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "angular-nest-app-backend:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/angular-nest-app/backend/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/angular-nest-app/backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "next-nest-app-backend": {
+      "root": "apps/next-nest-app/backend",
+      "sourceRoot": "apps/next-nest-app/backend/src",
+      "projectType": "application",
+      "prefix": "next-nest-app-backend",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/next-nest-app/backend",
+            "main": "apps/next-nest-app/backend/src/main.ts",
+            "tsConfig": "apps/next-nest-app/backend/tsconfig.app.json",
+            "assets": ["apps/next-nest-app/backend/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/next-nest-app/backend/src/environments/environment.ts",
+                  "with": "apps/next-nest-app/backend/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "next-nest-app-backend:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/next-nest-app/backend/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/next-nest-app/backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "next-nest-app-ui": {
+      "root": "apps/next-nest-app/ui",
+      "sourceRoot": "apps/next-nest-app/ui",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/next-nest-app/ui",
+            "outputPath": "dist/apps/next-nest-app/ui"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "next-nest-app-ui:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "next-nest-app-ui:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "next-nest-app-ui:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/next-nest-app/ui/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/next-nest-app/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -134,6 +327,12 @@
     "@nrwl/react": {
       "application": {
         "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
       }
     }
   },

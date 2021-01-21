@@ -23,9 +23,6 @@
     }
   },
   "projects": {
-    "example-app": {
-      "tags": ["target:angular"]
-    },
     "api-interfaces": {
       "tags": ["target:workspace", "type:util"]
     },

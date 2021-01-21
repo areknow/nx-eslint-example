@@ -1,6 +1,5 @@
 module.exports = {
   projects: [
-    '<rootDir>/apps/example-app',
     '<rootDir>/libs/api-interfaces',
     '<rootDir>/libs/a-react-lib',
     '<rootDir>/libs/a-angular-lib',

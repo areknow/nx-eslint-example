@@ -26,9 +26,6 @@
     "example-app": {
       "tags": ["target:angular"]
     },
-    "api": {
-      "tags": ["target:backend"]
-    },
     "api-interfaces": {
       "tags": ["target:workspace", "type:util"]
     },

@@ -17,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@spine-z/a-react-lib": ["libs/a-react-lib/src/index.ts"],
+      "@spine-z/a-workspace-lib": ["libs/a-workspace-lib/src/index.ts"],
       "@spine-z/a-angular-feature-lib": [
         "libs/a-angular-feature-lib/src/index.ts"
       ],

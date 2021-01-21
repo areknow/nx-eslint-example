@@ -23,6 +23,21 @@
     }
   },
   "projects": {
+    "angular-nest-app-ui": {
+      "tags": ["target:angular"]
+    },
+    "angular-nest-app-backend": {
+      "tags": ["target:backend"]
+    },
+    "next-nest-app-backend": {
+      "tags": ["target:backend"]
+    },
+    "next-nest-app-ui": {
+      "tags": ["target:react"]
+    },
+    "a-workspace-lib": {
+      "tags": ["target:workspace"]
+    },
     "a-react-lib": {
       "tags": ["target:react"]
     },
@@ -31,18 +46,6 @@
     },
     "a-angular-util-lib": {
       "tags": ["target:angular", "type:util"]
-    },
-    "angular-nest-app-ui": {
-      "tags": []
-    },
-    "angular-nest-app-backend": {
-      "tags": []
-    },
-    "next-nest-app-backend": {
-      "tags": []
-    },
-    "next-nest-app-ui": {
-      "tags": []
     }
   }
 }

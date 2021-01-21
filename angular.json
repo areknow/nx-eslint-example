@@ -1,70 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "a-react-lib": {
-      "root": "libs/a-react-lib",
-      "sourceRoot": "libs/a-react-lib/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/a-react-lib/**/*.{ts,tsx,js,jsx}"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/a-react-lib/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "a-angular-feature-lib": {
-      "projectType": "library",
-      "root": "libs/a-angular-feature-lib",
-      "sourceRoot": "libs/a-angular-feature-lib/src",
-      "prefix": "spine-z",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/a-angular-feature-lib/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/a-angular-feature-lib/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {}
-    },
-    "a-angular-util-lib": {
-      "projectType": "library",
-      "root": "libs/a-angular-util-lib",
-      "sourceRoot": "libs/a-angular-util-lib/src",
-      "prefix": "spine-z",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/a-angular-util-lib/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/a-angular-util-lib/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {}
-    },
     "angular-nest-app-ui": {
       "projectType": "application",
       "schematics": {},
@@ -300,6 +236,91 @@
           }
         }
       }
+    },
+    "a-workspace-lib": {
+      "root": "libs/a-workspace-lib",
+      "sourceRoot": "libs/a-workspace-lib/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/a-workspace-lib/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-workspace-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "a-react-lib": {
+      "root": "libs/a-react-lib",
+      "sourceRoot": "libs/a-react-lib/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/a-react-lib/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-react-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "a-angular-feature-lib": {
+      "projectType": "library",
+      "root": "libs/a-angular-feature-lib",
+      "sourceRoot": "libs/a-angular-feature-lib/src",
+      "prefix": "spine-z",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/a-angular-feature-lib/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-angular-feature-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "a-angular-util-lib": {
+      "projectType": "library",
+      "root": "libs/a-angular-util-lib",
+      "sourceRoot": "libs/a-angular-util-lib/src",
+      "prefix": "spine-z",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/a-angular-util-lib/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-angular-util-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {

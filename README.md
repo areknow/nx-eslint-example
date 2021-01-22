@@ -30,6 +30,6 @@ Open the referenced file above and you should see a red highlight on line 5. Thi
 
 If that error is not visible in your IDE, you do not have the correct plugins configured.
 
-## Enabling ESLINT locally
+## Enabling ESLint locally
 
 You must activate the `rvest.vs-code-prettier-eslint` plugin upon install. The steps are listed in the repository: https://github.com/Microsoft/vscode-eslint#release-notes and the description page of the plugin.

@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/a-react-lib',
     '<rootDir>/libs/a-angular-feature-lib',
     '<rootDir>/libs/a-angular-util-lib',
+    '<rootDir>/libs/a-cool-ng-lib',
   ],
 };

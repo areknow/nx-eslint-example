@@ -21,7 +21,8 @@
       "@spine-z/a-angular-feature-lib": [
         "libs/a-angular-feature-lib/src/index.ts"
       ],
-      "@spine-z/a-angular-util-lib": ["libs/a-angular-util-lib/src/index.ts"]
+      "@spine-z/a-angular-util-lib": ["libs/a-angular-util-lib/src/index.ts"],
+      "@spine-z/a-cool-ng-lib": ["libs/a-cool-ng-lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

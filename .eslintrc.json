@@ -15,6 +15,11 @@
     "prettier",
     "prettier/@typescript-eslint"
   ],
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
   "rules": {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -53,6 +58,12 @@
       "files": ["*.tsx"],
       "rules": {
         "@typescript-eslint/no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-undef": "off"
       }
     }
   ]

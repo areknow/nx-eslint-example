@@ -321,6 +321,28 @@
         }
       },
       "schematics": {}
+    },
+    "a-cool-ng-lib": {
+      "projectType": "library",
+      "root": "libs/a-cool-ng-lib",
+      "sourceRoot": "libs/a-cool-ng-lib/src",
+      "prefix": "spine-z",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/a-cool-ng-lib/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a-cool-ng-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {

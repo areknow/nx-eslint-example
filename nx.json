@@ -46,6 +46,9 @@
     },
     "a-angular-util-lib": {
       "tags": ["target:angular", "type:util"]
+    },
+    "a-cool-ng-lib": {
+      "tags": []
     }
   }
 }
